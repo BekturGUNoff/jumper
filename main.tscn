@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cofbnkv58t701"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_64xu0"]
+[ext_resource type="PackedScene" uid="uid://tu5es1xpqptg" path="res://BG.tscn" id="2_c6td5"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_64xu0")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 471.0
+offset_top = 120.0
+offset_right = 524.0
+offset_bottom = 151.0
+scale = Vector2(5, 5)
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 465.0
+offset_top = 374.0
+offset_right = 521.0
+offset_bottom = 405.0
+scale = Vector2(5, 5)
+tooltip_text = "Surprise mofo!"
+text = "Quit"
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_c6td5")]
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
